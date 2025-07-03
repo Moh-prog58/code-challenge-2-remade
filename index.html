@@ -2,8 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Guest List Manager</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Event Guest List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      background: white;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-bottom: 5px;
+    }
+
+    li button {
+      background-color: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    li button:hover {
+      background-color: #e60000;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -17,6 +79,33 @@
     <ul id="guest-list"></ul>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('guest-form');
+      const input = document.getElementById('guest-name');
+      const list = document.getElementById('guest-list');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = input.value.trim();
+
+        if (name !== '') {
+          const li = document.createElement('li');
+          li.textContent = name;
+
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = 'Remove';
+          removeBtn.addEventListener('click', function () {
+            list.removeChild(li);
+          });
+
+          li.appendChild(removeBtn);
+          list.appendChild(li);
+
+          input.value = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

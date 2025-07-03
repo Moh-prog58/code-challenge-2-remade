@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #eee;
+}
+.container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: auto;
+}
+h1 {
+  text-align: center;
+}
+form {
+  margin-bottom: 20px;
+}
+input, select, button {
+  padding: 10px;
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.btns button {
+  margin-right: 10px;
+}
+.attending {
+  color: green;
+}
+.not-attending {
+  color: red;
+}

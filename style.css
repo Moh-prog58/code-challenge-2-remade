@@ -1,42 +1,47 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
   padding: 20px;
-  background-color: #eee;
 }
+
 .container {
-  background-color: white;
-  padding: 15px;
-  border-radius: 5px;
-  max-width: 500px;
-  margin: auto;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
   text-align: center;
 }
+
 form {
-  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
 }
-input, select, button {
+
+input {
+  flex: 1;
   padding: 10px;
-  margin: 5px 0;
-  display: block;
-  width: 100%;
 }
+
+button {
+  padding: 10px;
+}
+
 ul {
+  margin-top: 20px;
   list-style: none;
   padding: 0;
 }
+
 li {
-  background: #f4f4f4;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-.btns button {
-  margin-right: 10px;
-}
-.attending {
-  color: green;
-}
-.not-attending {
-  color: red;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
 }
